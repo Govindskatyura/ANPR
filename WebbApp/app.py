@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 BASE_PATH = os.getcwd()
 UPLOAD_PATH = os.path.join(
-    BASE_PATH, '/Content/ANPR/WebbApp/static/upload')
+    BASE_PATH, '/content/ANPR/WebbApp/static/upload')
 
 
 @app.route('/', methods=['POST', 'GET'])
