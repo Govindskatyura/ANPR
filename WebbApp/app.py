@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 import os
 from deeplearning import OCR
+from flask_ngrok import run_with_ngrok
+
 # webserver gateway interface
 app = Flask(__name__)
 
@@ -8,7 +10,7 @@ BASE_PATH = os.getcwd()
 UPLOAD_PATH = os.path.join(
     BASE_PATH, '/content/ANPR/WebbApp/static/upload')
 
-
+run_with_ngrok(app)
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
